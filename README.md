@@ -33,3 +33,12 @@ And here is the list of instructions that we can perform :
 - pa (push a) : Top number in B goes to top of A
 
 - pb (push b) : Top number in A goes to top of B
+
+![image](https://github.com/izzypt/Push_swap/assets/73948790/407c667f-1eae-47d4-a0c3-a8c337168fd3)
+
+![image](https://github.com/izzypt/Push_swap/assets/73948790/c5bb74b4-8d3d-47bc-8622-22ad9feea6a8)
+
+![image](https://github.com/izzypt/Push_swap/assets/73948790/a7ea4981-003b-48c3-b171-a48887ce7fd0)
+
+![image](https://github.com/izzypt/Push_swap/assets/73948790/47290d7c-112c-4de7-8b58-bac1a6bd1785)
+
