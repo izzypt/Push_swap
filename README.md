@@ -42,3 +42,8 @@ And here is the list of instructions that we can perform :
 
 ![image](https://github.com/izzypt/Push_swap/assets/73948790/47290d7c-112c-4de7-8b58-bac1a6bd1785)
 
+### Another helpfull topics :
+
+https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
+
+https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
