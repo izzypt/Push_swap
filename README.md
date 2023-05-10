@@ -48,6 +48,9 @@ And here is the list of instructions that we can perform :
 
 Decided to implement the stack by using a linked list.
 
+![image](https://github.com/izzypt/Push_swap/assets/73948790/7486eb4f-bb2f-4a45-ba97-ca808055e89d)
+
+
 ### Another helpfull topics :
 
 https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
