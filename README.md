@@ -12,39 +12,37 @@ We can perform certain instructions on these stacks, and the goal is to sort all
 
 And here is the list of instructions that we can perform :
 
-- sa (swap a) : Swap the top two numbers in A
-
-- sb (swap b) : Swap the top two numbers in B
-
-- ss : sa + sb
-
-- ra (rotate a) : Top number in A goes to bottom of A
-
-- rb (rotate b) : Top number in B goes to bottom of B
-
-- rr : ra + rb
-
-- rra (reverse rotate a) : Bottom number in A goes to top of A
-
-- rra (reverse rotate b) : Bottom number in B goes to top of B
-
-- rrr : rra + rrb
-
-- pa (push a) : Top number in B goes to top of A
-
-- pb (push b) : Top number in A goes to top of B
+- sa (swap a): Swap the first 2 elements at the top of stack a. 
+- sb (swap b): Swap the first 2 elements at the top of stack b.
+- ss : sa and sb at the same time.
 
 ![image](https://github.com/izzypt/Push_swap/assets/73948790/407c667f-1eae-47d4-a0c3-a8c337168fd3)
 
-![image](https://github.com/izzypt/Push_swap/assets/73948790/c5bb74b4-8d3d-47bc-8622-22ad9feea6a8)
-
-![image](https://github.com/izzypt/Push_swap/assets/73948790/a7ea4981-003b-48c3-b171-a48887ce7fd0)
+- pa (push a): Take the first element at the top of b and put it at the top of a. 
+- pb (push b): Take the first element at the top of a and put it at the top of b.
 
 ![image](https://github.com/izzypt/Push_swap/assets/73948790/47290d7c-112c-4de7-8b58-bac1a6bd1785)
 
+- ra (rotate a): Shift up all elements of stack a by 1. The first element becomes the last one.
+- rb (rotate b): Shift up all elements of stack b by 1. The first element becomes the last one.
+- rr : ra and rb at the same time.
+
+![image](https://github.com/izzypt/Push_swap/assets/73948790/c5bb74b4-8d3d-47bc-8622-22ad9feea6a8)
+
+
+- rra (reverse rotate a): Shift down all elements of stack a by 1. The last element becomes the first one.
+- rrb (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.
+- rrr : rra and rrb at the same time.
+
+![image](https://github.com/izzypt/Push_swap/assets/73948790/a7ea4981-003b-48c3-b171-a48887ce7fd0)
+
+
+
+
+
 # Implementing the stack
 
-Decided to implement the stack by using a lined list.
+Decided to implement the stack by using a linked list.
 
 ### Another helpfull topics :
 
