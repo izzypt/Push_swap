@@ -42,6 +42,10 @@ And here is the list of instructions that we can perform :
 
 # Implementing the stack
 
+![image](https://github.com/izzypt/Push_swap/assets/73948790/04aac693-59b3-4f62-8d3c-4fe703f03206)
+
+
+
 Decided to implement the stack by using a linked list.
 
 ### Another helpfull topics :
