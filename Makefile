@@ -1,7 +1,7 @@
 NAME=push_swap
 CFLAGS=-Wall -Wextra -Werror
 CC=cc
-SRC=main.c helper_functions/ft_atoi.c
+SRC=main.c helper_functions/*.c
 
 all:$(NAME)
 
