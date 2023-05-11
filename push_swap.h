@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/11 18:01:07 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:44:01 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void			sa(t_stack_node *head);
 void			sb(t_stack_node *head);
 void			ss(t_stack_node *head_a, t_stack_node *head_b);
 void			ra(t_stack_node *head);
+void			rra(t_stack_node *tail);
 
 #endif

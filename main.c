@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:44:19 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/11 18:00:41 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/11 20:41:43 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	head = create_stack_a(argc, argv);
+	write(1, "Original List: ", 15);
 	print_list(head);
 	write(1, "\n", 1);
 	sa(head);
 	write(1, "\n", 1);
 	print_list(head);
 	write(1, "\n", 1);
-	put_nbr(stack_data()->a_head->value);
-	put_nbr(stack_data()->a_tail->value);
 	ra(head);
 	write(1, "\n", 1);
 	print_list(head);

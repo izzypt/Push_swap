@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/11 18:16:29 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/11 20:39:40 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	rb(t_stack_node *head)
 	write(1, "rb", 2);
 }
 
-void	rra(t_stack_node *head)
+/*void	rra(t_stack_node *head)
 {
 
 }
@@ -61,4 +61,4 @@ void	rra(t_stack_node *head)
 void	rrb(t_stack_node *head)
 {
 
-}
+}*/

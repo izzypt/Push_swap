@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:22:00 by simao             #+#    #+#             */
-/*   Updated: 2023/05/11 17:36:01 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:31:39 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ t_stack_node	*create_stack_a(int argc, char **argv)
 	t_stack_node	*head;
 	int				i;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (++i < argc)
 	{
 		if (i == 1)
 		{
@@ -48,7 +48,6 @@ t_stack_node	*create_stack_a(int argc, char **argv)
 		}
 		curr->value = ft_atoi(argv[i]);
 		curr->next = NULL;
-		i++;
 	}
 	stack_data()->a_tail = curr;
 	return (head);
