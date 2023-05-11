@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   validators.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 16:40:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/11 16:55:58 by smagalha         ###   ########.fr       */
+/*   Created: 2023/05/11 16:26:26 by smagalha          #+#    #+#             */
+/*   Updated: 2023/05/11 16:27:02 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(t_stack_node *head)
+int	validate_input(char *str)
 {
-	int	buffer;
+	int	i;
 
-	buffer = head->value;
-	head->value = head->next->value;
-	head->next->value = buffer;
-	write(1, "sa", 2);
-}
-
-void	sb(t_stack_node *head)
-{
-	int	buffer;
-
-	buffer = head->value;
-	head->value = head->next->value;
-	head->next->value = buffer;
-	write(1, "sb", 2);
-}
-
-void	ss(t_stack_node *head_a, t_stack_node *head_b)
-{
-	sa(head_a);
-	sb(head_b);
-	write(1, "ss", 2);
+	i = 0;
+	while (str[i])
+	{
+		if ((str[i] == '+' || str[i] == '-') && i == 0)
+			i++;
+		else if (str[i] >= '0' && str[i] <= '9')
+			i++;
+		else
+		{
+			write(1, "Error", 5);
+			return (0);
+			exit(1);
+		}
+	}
+	return (1);
 }

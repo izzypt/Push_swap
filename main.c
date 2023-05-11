@@ -3,39 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:44:19 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/11 14:52:30 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/11 18:00:41 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	validate_input(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] == '+' || str[i] == '-') && i == 0)
-			i++;
-		else if (str[i] >= '0' && str[i] <= '9')
-			i++;
-		else
-		{
-			write(1, "Error", 5);
-			return (0);
-			exit(1);
-		}
-	}
-	return (1);
-}
-
 int	main(int argc, char **argv)
 {
 	int				i;
+	t_stack_node	*head;
 
 	i = 1;
 	while (i < argc)
@@ -43,5 +23,16 @@ int	main(int argc, char **argv)
 		validate_input(argv[i]);
 		i++;
 	}
-	print_list(create_stack_a(argc, argv));
+	head = create_stack_a(argc, argv);
+	print_list(head);
+	write(1, "\n", 1);
+	sa(head);
+	write(1, "\n", 1);
+	print_list(head);
+	write(1, "\n", 1);
+	put_nbr(stack_data()->a_head->value);
+	put_nbr(stack_data()->a_tail->value);
+	ra(head);
+	write(1, "\n", 1);
+	print_list(head);
 }

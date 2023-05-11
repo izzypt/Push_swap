@@ -1,55 +1,64 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lists.c                                            :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 12:22:00 by simao             #+#    #+#             */
-/*   Updated: 2023/05/11 17:36:01 by smagalha         ###   ########.fr       */
+/*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
+/*   Updated: 2023/05/11 18:16:29 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	print_list(t_stack_node *head)
+void	ra(t_stack_node *head)
 {
 	t_stack_node	*curr;
+	int				temp;
 
 	curr = head;
+	temp = curr->value;
 	while (curr)
 	{
-		put_nbr(curr->value);
+		if (!(curr->next))
+		{
+			curr->value = temp;
+			break ;
+		}
+		curr->value = curr->next->value;
 		curr = curr->next;
 	}
+	write(1, "ra", 2);
 }
 
-t_stack_node	*create_stack_a(int argc, char **argv)
+
+void	rb(t_stack_node *head)
 {
 	t_stack_node	*curr;
-	t_stack_node	*head;
-	int				i;
+	int				temp;
 
-	i = 1;
-	while (i < argc)
+	curr = head;
+	temp = curr->value;
+	while (curr)
 	{
-		if (i == 1)
+		if (!(curr->next))
 		{
-			curr = malloc(sizeof(t_stack_node));
-			head = curr;
-			curr->prev = NULL;
-			stack_data()->a_head = head;
+			curr->value = temp;
+			break ;
 		}
-		else
-		{
-			curr->next = malloc(sizeof(t_stack_node));
-			curr->next->prev = curr;
-			curr = curr->next;
-		}
-		curr->value = ft_atoi(argv[i]);
-		curr->next = NULL;
-		i++;
+		curr->value = curr->next->value;
+		curr = curr->next;
 	}
-	stack_data()->a_tail = curr;
-	return (head);
+	write(1, "rb", 2);
+}
+
+void	rra(t_stack_node *head)
+{
+
+}
+
+void	rrb(t_stack_node *head)
+{
+
 }

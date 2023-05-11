@@ -1,40 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 16:40:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/11 16:55:58 by smagalha         ###   ########.fr       */
+/*   Created: 2023/05/11 16:57:27 by smagalha          #+#    #+#             */
+/*   Updated: 2023/05/11 16:59:41 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(t_stack_node *head)
+void	put_nbr(int number)
 {
-	int	buffer;
-
-	buffer = head->value;
-	head->value = head->next->value;
-	head->next->value = buffer;
-	write(1, "sa", 2);
-}
-
-void	sb(t_stack_node *head)
-{
-	int	buffer;
-
-	buffer = head->value;
-	head->value = head->next->value;
-	head->next->value = buffer;
-	write(1, "sb", 2);
-}
-
-void	ss(t_stack_node *head_a, t_stack_node *head_b)
-{
-	sa(head_a);
-	sb(head_b);
-	write(1, "ss", 2);
+	if (number > 10)
+		put_nbr(number / 10);
+	write(1, &"0123456789"[number % 10], 1);
 }
