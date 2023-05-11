@@ -10,7 +10,7 @@ We can perform certain instructions on these stacks, and the goal is to sort all
 
 
 
-And here is the list of instructions that we can perform :
+And here is the <ins>**list of instructions**</ins> that we can perform :
 
 - sa (swap a): Swap the first 2 elements at the top of stack a. 
 - sb (swap b): Swap the first 2 elements at the top of stack b.
@@ -39,11 +39,11 @@ And here is the list of instructions that we can perform :
 
 # Limit of actions
 
-- With 3 numbers, we need to sort it with not more than 3 instructions.
+- <ins>**With 3 numbers**</ins>, we need to sort it with not more than 3 instructions.
 
-- With 5 numbers, we need to sort it with not more than 12 instructions.
+- <ins>**With 5 numbers**</ins>, we need to sort it with not more than 12 instructions.
 
-- With 100 numbers, we can get
+- <ins>**With 100 numbers**</ins>, we can get
 
   - 5 points if the size of the list of instructions is less than 700
 
@@ -55,7 +55,7 @@ And here is the list of instructions that we can perform :
 
   - 1 points if the size of the list of instructions is less than 1500
 
-- With 500 numbers, we can get
+- <ins>**With 500 numbers**</ins>, we can get
 
   - 5 points if the size of the list of instructions is less than 5500
 
