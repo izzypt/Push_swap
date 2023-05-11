@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/10 22:36:06 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/11 15:11:56 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }						t_stack_node;
 
-int	ft_atoi(const char *s);
+int				ft_atoi(const char *s);
+void			print_list(t_stack_node *head);
+t_stack_node	*create_stack_a(int argc, char **argv);
+void			put_nbr(int number);
 
 #endif
