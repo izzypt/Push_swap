@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/11 18:44:01 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:59:20 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_stack_data
 
 t_stack_data	*stack_data(void);
 t_stack_node	*create_stack_a(int argc, char **argv);
+t_stack_node	*create_stack_b(void);
 int				validate_input(char *str);
 int				ft_atoi(const char *s);
 void			print_list(t_stack_node *head);
@@ -45,5 +46,6 @@ void			sb(t_stack_node *head);
 void			ss(t_stack_node *head_a, t_stack_node *head_b);
 void			ra(t_stack_node *head);
 void			rra(t_stack_node *tail);
+void			pb(void);
 
 #endif

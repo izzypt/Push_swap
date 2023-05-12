@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/11 20:39:40 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/12 00:12:45 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ra(t_stack_node *head)
 		curr->value = curr->next->value;
 		curr = curr->next;
 	}
-	write(1, "ra", 2);
+	write(1, "ra\n", 3);
 }
 
 
@@ -53,12 +53,32 @@ void	rb(t_stack_node *head)
 	write(1, "rb", 2);
 }
 
-/*void	rra(t_stack_node *head)
+void	rra(t_stack_node *head)
 {
+	t_stack_node	*curr;
 
+	curr = head;
+	while (curr->next)
+		curr = curr->next;
+	head->prev = curr;
+	curr->prev->next = NULL;
+	curr->next = head;
+	curr->prev = NULL;
+	stack_data()->a_head = curr;
+	write(1, "ra\n", 3);
 }
 
 void	rrb(t_stack_node *head)
 {
+	t_stack_node	*curr;
 
-}*/
+	curr = head;
+	while (curr->next)
+		curr = curr->next;
+	head->prev = curr;
+	curr->prev->next = NULL;
+	curr->next = head;
+	curr->prev = NULL;
+	stack_data()->b_head = curr;
+	write(1, "ra\n", 3);
+}

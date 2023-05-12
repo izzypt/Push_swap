@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lists.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:22:00 by simao             #+#    #+#             */
-/*   Updated: 2023/05/11 18:31:39 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:59:06 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,13 @@ t_stack_node	*create_stack_a(int argc, char **argv)
 	}
 	stack_data()->a_tail = curr;
 	return (head);
+}
+
+t_stack_node	*create_stack_b(void)
+{
+	t_stack_node	*head;
+
+	head = malloc(sizeof(t_stack_node));
+	stack_data()->b_head = head;
+	return (stack_data()->b_head);
 }
