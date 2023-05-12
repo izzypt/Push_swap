@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/12 17:40:04 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/12 23:13:28 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	ra(t_stack_node *head)
 	write(1, "ra\n", 3);
 }
 
-
 void	rb(t_stack_node *head)
 {
 	t_stack_node	*curr;
@@ -51,6 +50,12 @@ void	rb(t_stack_node *head)
 		curr = curr->next;
 	}
 	write(1, "rb", 2);
+}
+
+void	rr(t_stack_node *a_head, t_stack_node *b_head)
+{
+	ra(a_head);
+	rb(b_head);
 }
 
 void	rra(t_stack_node *head)

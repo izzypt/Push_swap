@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:37:14 by simao             #+#    #+#             */
-/*   Updated: 2023/05/12 17:54:52 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/12 22:51:29 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	pb(void)
 		return ;
 	node = stack_data()->a_head;
 	stack_data()->a_head = stack_data()->a_head->next;
-
 	if (!stack_data()->b_head)
 	{
 		create_stack_b();
@@ -32,7 +31,6 @@ void	pb(void)
 		stack_data()->b_head = node;
 	}
 	write(1, "pb\n", 3);
-
 }
 
 void	pa(void)
@@ -43,7 +41,6 @@ void	pa(void)
 		return ;
 	node = stack_data()->b_head;
 	stack_data()->b_head = stack_data()->b_head->next;
-
 	if (!stack_data()->a_head)
 	{
 		stack_data()->a_head = node;
