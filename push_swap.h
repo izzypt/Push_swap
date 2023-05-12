@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/12 15:59:20 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/12 17:23:35 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ void			ss(t_stack_node *head_a, t_stack_node *head_b);
 void			ra(t_stack_node *head);
 void			rra(t_stack_node *tail);
 void			pb(void);
+void			pa(void);
 
 #endif

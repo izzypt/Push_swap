@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:22:00 by simao             #+#    #+#             */
-/*   Updated: 2023/05/12 15:59:06 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/12 17:23:08 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ void	print_list(t_stack_node *head)
 {
 	t_stack_node	*curr;
 
+	if (!head)
+	{
+		write(1, "NULL", 4);
+		return ;
+	}
 	curr = head;
 	while (curr)
 	{
@@ -37,13 +42,11 @@ t_stack_node	*create_stack_a(int argc, char **argv)
 		{
 			curr = malloc(sizeof(t_stack_node));
 			head = curr;
-			curr->prev = NULL;
 			stack_data()->a_head = head;
 		}
 		else
 		{
 			curr->next = malloc(sizeof(t_stack_node));
-			curr->next->prev = curr;
 			curr = curr->next;
 		}
 		curr->value = ft_atoi(argv[i]);
