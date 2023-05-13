@@ -1,7 +1,7 @@
 NAME=push_swap
 CFLAGS=-Wall -Wextra -Werror
 CC=cc
-SRC=main.c helper_functions/*.c validators/*.c utils/*.c
+SRC=main.c project_logic/*.c validators/*.c utils/*.c
 
 all:$(NAME)
 

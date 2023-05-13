@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:44:19 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/12 23:00:48 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/13 17:57:43 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,7 @@ int	main(int argc, char **argv)
 	write(1, "Original List: ", 15);
 	print_list(stack_data()->a_head);
 	write(1, "\n", 1);
+	if (argc == 4)
+		small_sort();
+	print_list(stack_data()->a_head);
 }

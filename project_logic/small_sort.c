@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 15:04:07 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/11 14:53:16 by simao            ###   ########.fr       */
+/*   Created: 2023/05/12 23:54:43 by simao             #+#    #+#             */
+/*   Updated: 2023/05/13 17:22:52 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_atoi(const char *s)
+void	small_sort(void)
 {
-	size_t		i;
-	long int	res;
-	int			sign;
+	t_stack_node	*curr;
 
-	i = 0;
-	res = 0;
-	sign = 1;
-	while ((s[i] >= 9 && s[i] <= 13) || s[i] == 32)
-		i++;
-	if (s[i] == '+')
-		i++;
-	else if (s[i] == '-')
+	curr = stack_data()->a_head;
+	if (curr->value > curr->next->value && \
+	curr->value < curr->next->next->value)
+		sa(stack_data()->a_head);
+	else if (curr->value < curr->next->value && \
+	curr->value > curr->next->next->value)
 	{
-		sign = sign * (-1);
-		i++;
+		rra(stack_data()->a_head);
 	}
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		res = res * 10 + s[i] - '0';
-		i++;
-	}
-	return ((int)(res * sign));
+
 }

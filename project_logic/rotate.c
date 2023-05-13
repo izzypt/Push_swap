@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/12 23:13:28 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/13 17:22:25 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	rb(t_stack_node *head)
 		curr->value = curr->next->value;
 		curr = curr->next;
 	}
-	write(1, "rb", 2);
+	write(1, "rb\n", 2);
 }
 
 void	rr(t_stack_node *a_head, t_stack_node *b_head)
@@ -81,5 +81,5 @@ void	rrb(t_stack_node *head)
 	curr->next->next = head;
 	stack_data()->b_head = curr->next;
 	curr->next = NULL;
-	write(1, "rra\n", 3);
+	write(1, "rrb\n", 3);
 }

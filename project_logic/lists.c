@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:22:00 by simao             #+#    #+#             */
-/*   Updated: 2023/05/12 17:23:08 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/13 17:59:56 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ void	print_list(t_stack_node *head)
 		put_nbr(curr->value);
 		curr = curr->next;
 	}
+}
+
+int	list_is_sorted(t_stack_node *head)
+{
+	t_stack_node	*curr;
+
+	curr = head;
+	while (curr ->next)
+	{
+		if (curr->value > curr->next->value)
+			return (0);
+		curr = curr->next;
+	}
+	return (1);
 }
 
 t_stack_node	*create_stack_a(int argc, char **argv)
@@ -53,6 +67,7 @@ t_stack_node	*create_stack_a(int argc, char **argv)
 		curr->next = NULL;
 	}
 	stack_data()->a_tail = curr;
+	check_duplicates();
 	return (head);
 }
 
