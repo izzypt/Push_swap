@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:26:26 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/13 18:12:21 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/13 22:42:12 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,18 @@ int	validate_input(char *str)
 void	check_duplicates(void)
 {
 	t_stack_node	*curr;
-	t_stack_node	*next;
+	t_stack_node	*nxt;
 
 	curr = stack_data()->a_head;
 	while (curr)
 	{
-		next = curr->next;
-		while (next)
+		nxt = curr->nxt;
+		while (nxt)
 		{
-			if (curr->value == next->value)
+			if (curr->val == nxt->val)
 				error_and_exit();
-			next = next->next;
+			nxt = nxt->nxt;
 		}
-		curr = curr->next;
+		curr = curr->nxt;
 	}
 }

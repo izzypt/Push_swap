@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:22:00 by simao             #+#    #+#             */
-/*   Updated: 2023/05/13 17:59:56 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/13 22:39:10 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	print_list(t_stack_node *head)
 	curr = head;
 	while (curr)
 	{
-		put_nbr(curr->value);
-		curr = curr->next;
+		put_nbr(curr->val);
+		curr = curr->nxt;
 	}
 }
 
@@ -34,11 +34,11 @@ int	list_is_sorted(t_stack_node *head)
 	t_stack_node	*curr;
 
 	curr = head;
-	while (curr ->next)
+	while (curr->nxt)
 	{
-		if (curr->value > curr->next->value)
+		if (curr->val > curr->nxt->val)
 			return (0);
-		curr = curr->next;
+		curr = curr->nxt;
 	}
 	return (1);
 }
@@ -60,11 +60,11 @@ t_stack_node	*create_stack_a(int argc, char **argv)
 		}
 		else
 		{
-			curr->next = malloc(sizeof(t_stack_node));
-			curr = curr->next;
+			curr->nxt = malloc(sizeof(t_stack_node));
+			curr = curr->nxt;
 		}
-		curr->value = ft_atoi(argv[i]);
-		curr->next = NULL;
+		curr->val = ft_atoi(argv[i]);
+		curr->nxt = NULL;
 	}
 	stack_data()->a_tail = curr;
 	check_duplicates();

@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/13 17:22:25 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/13 22:48:34 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ void	ra(t_stack_node *head)
 	int				temp;
 
 	curr = head;
-	temp = curr->value;
+	temp = curr->val;
 	while (curr)
 	{
-		if (!(curr->next))
+		if (!(curr->nxt))
 		{
-			curr->value = temp;
+			curr->val = temp;
 			break ;
 		}
-		curr->value = curr->next->value;
-		curr = curr->next;
+		curr->val = curr->nxt->val;
+		curr = curr->nxt;
 	}
 	write(1, "ra\n", 3);
 }
@@ -38,24 +38,25 @@ void	rb(t_stack_node *head)
 	int				temp;
 
 	curr = head;
-	temp = curr->value;
+	temp = curr->val;
 	while (curr)
 	{
-		if (!(curr->next))
+		if (!(curr->nxt))
 		{
-			curr->value = temp;
+			curr->val = temp;
 			break ;
 		}
-		curr->value = curr->next->value;
-		curr = curr->next;
+		curr->val = curr->nxt->val;
+		curr = curr->nxt;
 	}
-	write(1, "rb\n", 2);
+	write(1, "rb\n", 3);
 }
 
 void	rr(t_stack_node *a_head, t_stack_node *b_head)
 {
 	ra(a_head);
 	rb(b_head);
+	write(1, "rr\n", 3);
 }
 
 void	rra(t_stack_node *head)
@@ -63,12 +64,12 @@ void	rra(t_stack_node *head)
 	t_stack_node	*curr;
 
 	curr = head;
-	while (curr->next->next)
-		curr = curr->next;
-	curr->next->next = head;
-	stack_data()->a_head = curr->next;
-	curr->next = NULL;
-	write(1, "rra\n", 3);
+	while (curr->nxt->nxt)
+		curr = curr->nxt;
+	curr->nxt->nxt = head;
+	stack_data()->a_head = curr->nxt;
+	curr->nxt = NULL;
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack_node *head)
@@ -76,10 +77,10 @@ void	rrb(t_stack_node *head)
 	t_stack_node	*curr;
 
 	curr = head;
-	while (curr->next->next)
-		curr = curr->next;
-	curr->next->next = head;
-	stack_data()->b_head = curr->next;
-	curr->next = NULL;
-	write(1, "rrb\n", 3);
+	while (curr->nxt->nxt)
+		curr = curr->nxt;
+	curr->nxt->nxt = head;
+	stack_data()->b_head = curr->nxt;
+	curr->nxt = NULL;
+	write(1, "rrb\n", 4);
 }

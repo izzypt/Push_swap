@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 23:54:43 by simao             #+#    #+#             */
-/*   Updated: 2023/05/13 17:22:52 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/13 22:44:24 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,24 @@ void	small_sort(void)
 	t_stack_node	*curr;
 
 	curr = stack_data()->a_head;
-	if (curr->value > curr->next->value && \
-	curr->value < curr->next->next->value)
+	if (curr->val > curr->nxt->val && curr->val < curr->nxt->nxt->val)
 		sa(stack_data()->a_head);
-	else if (curr->value < curr->next->value && \
-	curr->value > curr->next->next->value)
+	else if (curr->val < curr->nxt->val && curr->val > curr->nxt->nxt->val)
+		rra(stack_data()->a_head);
+	else if (curr->nxt->val < curr->val && curr->nxt->val > curr->nxt->nxt->val)
 	{
+		sa(stack_data()->a_head);
 		rra(stack_data()->a_head);
 	}
-
+	else if (curr->nxt->val > curr->val && curr->nxt->val > curr->nxt->nxt->val)
+	{
+		pb();
+		sa(stack_data()->a_head);
+		pa();
+	}
+	else if (curr->val > curr->nxt->val && curr->val > curr->nxt->nxt->val)
+	{
+		rra(stack_data()->a_head);
+		rra(stack_data()->a_head);
+	}
 }

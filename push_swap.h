@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/13 18:11:26 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/13 22:44:47 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 typedef struct s_stack_node
 {
-	int						value;
-	struct s_stack_node		*next;
+	int						val;
+	struct s_stack_node		*nxt;
 	struct s_stack_node		*prev;
 }						t_stack_node;
 
