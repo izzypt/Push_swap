@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lists.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:22:00 by simao             #+#    #+#             */
-/*   Updated: 2023/05/14 02:16:27 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/15 18:37:15 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_stack_node	*create_stack_a(int argc, char **argv)
 		{
 			curr = malloc(sizeof(t_stack_node));
 			head = curr;
-			stack_data()->a_head = head;
+			stack_data()->a = head;
 		}
 		else
 		{
@@ -76,8 +76,8 @@ t_stack_node	*create_stack_b(void)
 	t_stack_node	*head;
 
 	head = malloc(sizeof(t_stack_node));
-	stack_data()->b_head = head;
-	return (stack_data()->b_head);
+	stack_data()->b = head;
+	return (stack_data()->b);
 }
 
 int	list_len(t_stack_node *head)

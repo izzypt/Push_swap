@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:44:19 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/15 14:20:31 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/15 18:39:07 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	create_stack_a(argc, argv);
+	create_stack_tmp(argc, argv);
 	if (argc < 4)
 		smallest_sort();
 	else if (argc == 4)
 		small_sort();
-	else if (argc < 10)
+	else if (argc <= 100)
 		medium_sort();
-	if (list_is_sorted(stack_data()->a_head))
+	if (list_is_sorted(stack_data()->a))
 		write(1, "OK", 2);
 }
