@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:29:10 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/15 13:04:31 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/15 14:22:36 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,21 @@ int	list_min_val(t_stack_node *head)
 		curr = curr->nxt;
 	}
 	return (min);
+}
+
+int	get_index(int value)
+{
+	t_stack_node	*curr;
+	int				index;
+
+	curr = stack_data()->a_head;
+	index = 0;
+	while (curr)
+	{
+		if (curr->val == value)
+			return (index);
+		index++;
+		curr = curr->nxt;
+	}
+	return (-1);
 }

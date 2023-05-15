@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/15 13:15:18 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/15 14:22:10 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int				ft_atoi(const char *s);
 //Utils
 void			put_nbr(int number);
 void			error_and_exit(void);
+int				get_index(int value);
 //Sort functions
 void			smallest_sort(void);
 void			small_sort(void);

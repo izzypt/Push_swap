@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:44:19 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/15 13:17:35 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/15 14:20:31 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	main(int argc, char **argv)
 	create_stack_a(argc, argv);
 	if (argc < 4)
 		smallest_sort();
-	if (argc == 4)
+	else if (argc == 4)
 		small_sort();
-	if (argc == 6)
+	else if (argc < 10)
 		medium_sort();
 	if (list_is_sorted(stack_data()->a_head))
 		write(1, "OK", 2);
