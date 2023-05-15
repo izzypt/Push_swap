@@ -84,3 +84,5 @@ Decided to implement the stack by using a linked list.
 https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
 
 https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
+
+https://medium.com/@ayogun/push-swap-c1f5d2d41e97
