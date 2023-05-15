@@ -86,3 +86,5 @@ https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-t
 https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
 
 https://medium.com/@ayogun/push-swap-c1f5d2d41e97
+
+https://zainab-dnaya.medium.com/fastest-push-swap-algorithm-2f510028602b
