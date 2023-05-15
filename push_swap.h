@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/13 22:44:47 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/15 02:18:31 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ t_stack_data	*stack_data(void);
 t_stack_node	*create_stack_a(int argc, char **argv);
 t_stack_node	*create_stack_b(void);
 int				list_is_sorted(t_stack_node *head);
+int				list_len(t_stack_node *head);
 void			print_list(t_stack_node *head);
+int				list_max_value(t_stack_node *head);
 //Actions
 void			sa(t_stack_node *head);
 void			sb(t_stack_node *head);
@@ -60,5 +62,6 @@ void			put_nbr(int number);
 void			error_and_exit(void);
 //Sort functions
 void			small_sort(void);
+void			medium_sort(void);
 
 #endif

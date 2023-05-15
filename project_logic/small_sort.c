@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 23:54:43 by simao             #+#    #+#             */
-/*   Updated: 2023/05/13 22:44:24 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/15 02:33:09 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ void	small_sort(void)
 	}
 	else if (curr->nxt->val > curr->val && curr->nxt->val > curr->nxt->nxt->val)
 	{
-		pb();
 		sa(stack_data()->a_head);
-		pa();
+		ra(stack_data()->a_head);
 	}
 	else if (curr->val > curr->nxt->val && curr->val > curr->nxt->nxt->val)
 	{

@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:22:00 by simao             #+#    #+#             */
-/*   Updated: 2023/05/13 22:39:10 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/14 02:16:27 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,21 @@ t_stack_node	*create_stack_b(void)
 	head = malloc(sizeof(t_stack_node));
 	stack_data()->b_head = head;
 	return (stack_data()->b_head);
+}
+
+int	list_len(t_stack_node *head)
+{
+	int				i;
+	t_stack_node	*curr;
+
+	i = 0;
+	curr = head;
+	if (!curr)
+		return (0);
+	while (curr)
+	{
+		i++;
+		curr = curr->nxt;
+	}
+	return (i);
 }
