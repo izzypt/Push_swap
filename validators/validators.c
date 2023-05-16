@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validators.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:26:26 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/15 18:33:05 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:34:27 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	check_duplicates(void)
 	t_stack_node	*curr;
 	t_stack_node	*nxt;
 
-	curr = stack_data()->a;
+	curr = stack()->a;
 	while (curr)
 	{
 		nxt = curr->nxt;

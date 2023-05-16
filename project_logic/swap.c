@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:40:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/15 18:29:31 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:34:06 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	sa(void)
 {
 	int	buffer;
 
-	buffer = stack_data()->a->val;
-	stack_data()->a->val = stack_data()->a->nxt->val;
-	stack_data()->a->nxt->val = buffer;
+	buffer = stack()->a->val;
+	stack()->a->val = stack()->a->nxt->val;
+	stack()->a->nxt->val = buffer;
 	write(1, "sa\n", 3);
 }
 
@@ -26,9 +26,9 @@ void	sb(void)
 {
 	int	buffer;
 
-	buffer = stack_data()->b->val;
-	stack_data()->b->val = stack_data()->b->nxt->val;
-	stack_data()->b->nxt->val = buffer;
+	buffer = stack()->b->val;
+	stack()->b->val = stack()->b->nxt->val;
+	stack()->b->nxt->val = buffer;
 	write(1, "sb\n", 3);
 }
 

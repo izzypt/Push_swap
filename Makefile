@@ -1,5 +1,5 @@
 NAME=push_swap
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra
 CC=cc
 SRC=main.c project_logic/*.c validators/*.c utils/*.c
 

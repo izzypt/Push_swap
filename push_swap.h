@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/15 18:38:49 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:34:42 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,8 @@ typedef struct s_stack_data
 	t_stack_node	*tmp;
 }	t_stack_data;
 
-
 // List related
-t_stack_data	*stack_data(void);
+t_stack_data	*stack(void);
 t_stack_node	*create_stack_a(int argc, char **argv);
 t_stack_node	*create_stack_b(void);
 t_stack_node	*create_stack_tmp(int argc, char **argv);
@@ -46,6 +45,7 @@ int				list_len(t_stack_node *head);
 void			print_list(t_stack_node *head);
 int				list_max_val(t_stack_node *head);
 int				list_min_val(t_stack_node *head);
+t_stack_node	*sort_list(t_stack_node *lst);
 // Actions
 void			sa(void);
 void			sb(void);
@@ -54,6 +54,7 @@ void			ra(void);
 void			rb(void);
 void			rr(void);
 void			rra(void);
+void			rrb(void);
 void			pb(void);
 void			pa(void);
 // Validation function
@@ -64,9 +65,12 @@ int				ft_atoi(const char *s);
 void			put_nbr(int number);
 void			error_and_exit(void);
 int				get_index(int value);
+int				value_at(int index);
+int				val_under_pivot(int pivot);
 // Sort functions
 void			smallest_sort(void);
 void			small_sort(void);
 void			medium_sort(void);
+void			big_sort(void);
 
 #endif

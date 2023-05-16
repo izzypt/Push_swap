@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 23:54:43 by simao             #+#    #+#             */
-/*   Updated: 2023/05/15 18:29:12 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:33:59 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	smallest_sort(void)
 {
-	if (list_len(stack_data()->a) == 1)
+	if (list_len(stack()->a) == 1)
 		return ;
-	if (list_len(stack_data()->a) == 2)
+	if (list_len(stack()->a) == 2)
 		sa();
 }
 
@@ -24,7 +24,7 @@ void	small_sort(void)
 {
 	t_stack_node	*curr;
 
-	curr = stack_data()->a;
+	curr = stack()->a;
 	if (curr->val > curr->nxt->val && curr->val < curr->nxt->nxt->val)
 		sa();
 	else if (curr->val < curr->nxt->val && curr->val > curr->nxt->nxt->val)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 23:28:48 by simao             #+#    #+#             */
-/*   Updated: 2023/05/15 18:36:42 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:33:29 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@ void	medium_sort(void)
 	int	index;
 	int	proximity;
 
-	while (list_len(stack_data()->a) != 3)
+	while (list_len(stack()->a) != 3)
 	{
-		if (stack_data()->a->val == list_min_val(stack_data()->a))
+		if (stack()->a->val == list_min_val(stack()->a))
 			pb();
-		else if (stack_data()->a->nxt->val == list_min_val(stack_data()->a))
+		else if (stack()->a->nxt->val == list_min_val(stack()->a))
 		{
 			sa();
 			pb();
 		}
-		index = get_index(list_min_val(stack_data()->a));
-		proximity = list_len(stack_data()->a) / 2;
+		index = get_index(list_min_val(stack()->a));
+		proximity = list_len(stack()->a) / 2;
 		if (proximity > index)
 			ra();
 		else
 			rra();
 	}
-	if (!list_is_sorted(stack_data()->a))
+	if (!list_is_sorted(stack()->a))
 		small_sort();
-	while (list_len(stack_data()->b) > 0)
+	while (list_len(stack()->b) > 0)
 		pa();
 }

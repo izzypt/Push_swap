@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lists.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 12:22:00 by simao             #+#    #+#             */
-/*   Updated: 2023/05/15 18:37:15 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:33:16 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	print_list(t_stack_node *head)
 	while (curr)
 	{
 		put_nbr(curr->val);
+		write(1, " ", 1);
 		curr = curr->nxt;
 	}
 }
@@ -56,7 +57,7 @@ t_stack_node	*create_stack_a(int argc, char **argv)
 		{
 			curr = malloc(sizeof(t_stack_node));
 			head = curr;
-			stack_data()->a = head;
+			stack()->a = head;
 		}
 		else
 		{
@@ -66,7 +67,7 @@ t_stack_node	*create_stack_a(int argc, char **argv)
 		curr->val = ft_atoi(argv[i]);
 		curr->nxt = NULL;
 	}
-	stack_data()->a_tail = curr;
+	stack()->a_tail = curr;
 	check_duplicates();
 	return (head);
 }
@@ -76,8 +77,8 @@ t_stack_node	*create_stack_b(void)
 	t_stack_node	*head;
 
 	head = malloc(sizeof(t_stack_node));
-	stack_data()->b = head;
-	return (stack_data()->b);
+	stack()->b = head;
+	return (stack()->b);
 }
 
 int	list_len(t_stack_node *head)

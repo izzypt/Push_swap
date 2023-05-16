@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/15 18:36:17 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:59:59 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ra(void)
 	t_stack_node	*curr;
 	int				temp;
 
-	curr = stack_data()->a;
+	curr = stack()->a;
 	temp = curr->val;
 	while (curr)
 	{
@@ -37,7 +37,7 @@ void	rb(void)
 	t_stack_node	*curr;
 	int				temp;
 
-	curr = stack_data()->b;
+	curr = stack()->b;
 	temp = curr->val;
 	while (curr)
 	{
@@ -63,11 +63,11 @@ void	rra(void)
 {
 	t_stack_node	*curr;
 
-	curr = stack_data()->a;
+	curr = stack()->a;
 	while (curr->nxt->nxt)
 		curr = curr->nxt;
-	curr->nxt->nxt = stack_data()->a;
-	stack_data()->a = curr->nxt;
+	curr->nxt->nxt = stack()->a;
+	stack()->a = curr->nxt;
 	curr->nxt = NULL;
 	write(1, "rra\n", 4);
 }
@@ -76,11 +76,11 @@ void	rrb(void)
 {
 	t_stack_node	*curr;
 
-	curr = stack_data()->b;
+	curr = stack()->b;
 	while (curr->nxt->nxt)
 		curr = curr->nxt;
-	curr->nxt->nxt = stack_data()->b;
-	stack_data()->b = curr->nxt;
+	curr->nxt->nxt = stack()->b;
+	stack()->b = curr->nxt;
 	curr->nxt = NULL;
 	write(1, "rrb\n", 4);
 }

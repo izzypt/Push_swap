@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:44:19 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/15 18:39:07 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:39:38 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char **argv)
 		small_sort();
 	else if (argc <= 100)
 		medium_sort();
-	if (list_is_sorted(stack_data()->a))
+	else
+		big_sort();
+	if (list_is_sorted(stack()->a))
 		write(1, "OK", 2);
 }
