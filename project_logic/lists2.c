@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lists2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:19:20 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/16 12:33:20 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/16 22:39:15 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,23 @@ int	get_index(int value)
 		curr = curr->nxt;
 	}
 	return (-1);
+}
+
+int	value_at(int index)
+{
+	int				i;
+	t_stack_node	*lst;
+
+	i = 0;
+	lst = stack()->tmp;
+	if (index == list_len(lst))
+		index -= 1;
+	while (lst)
+	{
+		if (i == index)
+			return (lst->val);
+		i++;
+		lst = lst->nxt;
+	}
+	return (-9999);
 }

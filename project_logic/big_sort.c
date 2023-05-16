@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:45:42 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/16 13:56:53 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/16 22:53:31 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,48 +39,45 @@ t_stack_node	*create_stack_tmp(int argc, char **argv)
 	return (head);
 }
 
-int	ascending(int a, int b)
+int	movement_cost(int index)
 {
-	return (a <= b);
+	int				lst_len;
+	int				move_cost;
+	int				aproximity;
+
+	lst_len = list_len(stack()->a);
+	aproximity = lst_len / 2;
+	if (index <= aproximity)
+		move_cost = index - 0;
+	else
+		move_cost = lst_len - index + 1;
+	return (move_cost);
 }
 
-t_stack_node	*sort_list(t_stack_node *lst)
-{
-	t_stack_node	*current;
-	t_stack_node	*next;
-	int				tmp;
-
-	current = lst;
-	while (current)
-	{
-		next = current->nxt;
-		while (next)
-		{
-			if (ascending(current->val, next->val) == 0)
-			{
-				tmp = current->val;
-				current->val = next->val;
-				next->val = tmp;
-			}
-			next = next->nxt;
-		}
-		current = current->nxt;
-	}
-	return (lst);
-}
-
-int	val_under_pivot(int pivot)
+int	closest_value(int pivot)
 {
 	t_stack_node	*curr;
+	int				i;
+	int				lst_len;
+	int				move_cost;
+	int				best_move;
 
 	curr = stack()->a;
+	lst_len = list_len(stack()->a);
+	best_move = lst_len;
+	i = 0;
 	while (curr)
 	{
 		if (curr->val <= pivot)
-			return (curr->val);
+		{
+			move_cost = movement_cost(i);
+			if (move_cost < best_move)
+				best_move = move_cost;
+		}
+		i++;
 		curr = curr->nxt;
 	}
-	return (INT_MAX);
+	return (best_move);
 }
 
 void	big_sort(void)
@@ -91,11 +88,11 @@ void	big_sort(void)
 	int	proximity;
 	int	chunck_size;
 
-	chunck = 3;
+	chunck = 4;
 	while (chunck > 0)
 	{
-		pivot = value_at(list_len(stack()->tmp) / chunck);
 		chunck_size = (list_len(stack()->tmp) / chunck);
+		pivot = value_at(chunck_size);
 		while (list_len(stack()->b) != chunck_size)
 		{
 			if (stack()->a->val <= pivot)
@@ -107,9 +104,9 @@ void	big_sort(void)
 			}
 			if (stack()->a && stack()->a->nxt)
 			{
-				nxt_val = get_index(val_under_pivot(pivot));
+				nxt_val = get_index(closest_value(pivot));
 				proximity = list_len(stack()->a) / 2;
-				if (proximity > nxt_val)
+				if (nxt_val <= proximity)
 					ra();
 				else
 					rra();
@@ -117,7 +114,7 @@ void	big_sort(void)
 		}
 		chunck--;
 	}
-	while (list_len(stack()->b) > 2)
+	while (list_len(stack()->b) > 0)
 	{
 		if (stack()->b->val == list_max_val(stack()->b))
 			pa();
@@ -126,11 +123,14 @@ void	big_sort(void)
 			sb();
 			pa();
 		}
-		nxt_val = get_index(list_max_val(stack()->b));
-		proximity = list_len(stack()->b) / 2;
-		if (proximity > nxt_val)
-			rb();
-		else
-			rrb();
+		if (stack()->b && stack()->b->nxt)
+		{
+			nxt_val = get_index(list_max_val(stack()->b));
+			proximity = list_len(stack()->b) / 2;
+			if (proximity > nxt_val)
+				rb();
+			else
+				rrb();
+		}
 	}
 }
