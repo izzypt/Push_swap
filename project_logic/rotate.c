@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/16 22:19:40 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/17 13:49:45 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	ra(void)
 		curr->val = curr->nxt->val;
 		curr = curr->nxt;
 	}
-	write(1, "ra\n", 3);
+	stack()->total_actions++;
+	//write(1, "ra\n", 3);
 }
 
 void	rb(void)
@@ -49,14 +50,16 @@ void	rb(void)
 		curr->val = curr->nxt->val;
 		curr = curr->nxt;
 	}
-	write(1, "rb\n", 3);
+	stack()->total_actions++;
+	//write(1, "rb\n", 3);
 }
 
 void	rr(void)
 {
 	ra();
 	rb();
-	write(1, "rr\n", 3);
+	stack()->total_actions++;
+	//write(1, "rr\n", 3);
 }
 
 void	rra(void)
@@ -69,7 +72,8 @@ void	rra(void)
 	curr->nxt->nxt = stack()->a;
 	stack()->a = curr->nxt;
 	curr->nxt = NULL;
-	write(1, "rra\n", 4);
+	stack()->total_actions++;
+	//write(1, "rra\n", 4);
 }
 
 void	rrb(void)
@@ -82,5 +86,6 @@ void	rrb(void)
 	curr->nxt->nxt = stack()->b;
 	stack()->b = curr->nxt;
 	curr->nxt = NULL;
-	write(1, "rrb\n", 4);
+	stack()->total_actions++;
+	//write(1, "rrb\n", 4);
 }

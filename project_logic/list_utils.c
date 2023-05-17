@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lists2.c                                           :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:19:20 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/16 22:39:15 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:17:53 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,38 +44,36 @@ int	list_min_val(t_stack_node *head)
 	return (min);
 }
 
-int	get_index(int value)
+int	indx(int value)
 {
 	t_stack_node	*curr;
-	int				index;
+	int				i;
 
 	curr = stack()->a;
-	index = 0;
+	i = 0;
 	while (curr)
 	{
 		if (curr->val == value)
-			return (index);
-		index++;
+			return (i);
+		i++;
 		curr = curr->nxt;
 	}
-	return (-1);
+	return (-9999);
 }
 
-int	value_at(int index)
+int	value_at(int index, t_stack_node *lst)
 {
 	int				i;
-	t_stack_node	*lst;
+	t_stack_node	*curr;
 
 	i = 0;
-	lst = stack()->tmp;
-	if (index == list_len(lst))
-		index -= 1;
-	while (lst)
+	curr = lst;
+	while (curr)
 	{
 		if (i == index)
-			return (lst->val);
+			return (curr->val);
 		i++;
-		lst = lst->nxt;
+		curr = curr->nxt;
 	}
 	return (-9999);
 }

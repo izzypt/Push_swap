@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/16 12:34:42 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/17 15:16:55 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_stack_data
 	t_stack_node	*b;
 	t_stack_node	*b_tail;
 	t_stack_node	*tmp;
+	int				total_actions;
 }	t_stack_data;
 
 // List related
@@ -64,13 +65,15 @@ int				ft_atoi(const char *s);
 // Utils
 void			put_nbr(int number);
 void			error_and_exit(void);
-int				get_index(int value);
-int				value_at(int index);
-int				val_under_pivot(int pivot);
+int				indx(int value);
+int				value_at(int i, t_stack_node *lst);
 // Sort functions
 void			smallest_sort(void);
 void			small_sort(void);
 void			medium_sort(void);
 void			big_sort(void);
+// Calculate functions
+int				mean(t_stack_node *lst);
+int				best_move(t_stack_node	*lst, int pivot);
 
 #endif

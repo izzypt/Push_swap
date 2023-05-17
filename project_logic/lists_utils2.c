@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lists.c                                            :+:      :+:    :+:   */
+/*   lists3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 12:22:00 by simao             #+#    #+#             */
-/*   Updated: 2023/05/16 12:33:16 by simao            ###   ########.fr       */
+/*   Created: 2023/05/16 22:53:56 by smagalha          #+#    #+#             */
+/*   Updated: 2023/05/17 12:03:08 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,43 +44,6 @@ int	list_is_sorted(t_stack_node *head)
 	return (1);
 }
 
-t_stack_node	*create_stack_a(int argc, char **argv)
-{
-	t_stack_node	*curr;
-	t_stack_node	*head;
-	int				i;
-
-	i = 0;
-	while (++i < argc)
-	{
-		if (i == 1)
-		{
-			curr = malloc(sizeof(t_stack_node));
-			head = curr;
-			stack()->a = head;
-		}
-		else
-		{
-			curr->nxt = malloc(sizeof(t_stack_node));
-			curr = curr->nxt;
-		}
-		curr->val = ft_atoi(argv[i]);
-		curr->nxt = NULL;
-	}
-	stack()->a_tail = curr;
-	check_duplicates();
-	return (head);
-}
-
-t_stack_node	*create_stack_b(void)
-{
-	t_stack_node	*head;
-
-	head = malloc(sizeof(t_stack_node));
-	stack()->b = head;
-	return (stack()->b);
-}
-
 int	list_len(t_stack_node *head)
 {
 	int				i;
@@ -96,4 +59,34 @@ int	list_len(t_stack_node *head)
 		curr = curr->nxt;
 	}
 	return (i);
+}
+
+int	ascending(int a, int b)
+{
+	return (a <= b);
+}
+
+t_stack_node	*sort_list(t_stack_node *lst)
+{
+	t_stack_node	*current;
+	t_stack_node	*next;
+	int				tmp;
+
+	current = lst;
+	while (current)
+	{
+		next = current->nxt;
+		while (next)
+		{
+			if (ascending(current->val, next->val) == 0)
+			{
+				tmp = current->val;
+				current->val = next->val;
+				next->val = tmp;
+			}
+			next = next->nxt;
+		}
+		current = current->nxt;
+	}
+	return (lst);
 }

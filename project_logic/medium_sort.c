@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 23:28:48 by simao             #+#    #+#             */
-/*   Updated: 2023/05/16 12:33:29 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/17 15:17:59 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	medium_sort(void)
 {
-	int	index;
+	int	i;
 	int	proximity;
 
 	while (list_len(stack()->a) != 3)
@@ -26,9 +26,9 @@ void	medium_sort(void)
 			sa();
 			pb();
 		}
-		index = get_index(list_min_val(stack()->a));
+		i = indx(list_min_val(stack()->a));
 		proximity = list_len(stack()->a) / 2;
-		if (proximity > index)
+		if (proximity > i)
 			ra();
 		else
 			rra();

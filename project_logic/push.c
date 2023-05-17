@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:37:14 by simao             #+#    #+#             */
-/*   Updated: 2023/05/16 22:19:47 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/17 13:50:01 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	pb(void)
 		node->nxt = stack()->b;
 		stack()->b = node;
 	}
-	write(1, "pb\n", 3);
+	stack()->total_actions++;
+	//write(1, "pb\n", 3);
 }
 
 void	pa(void)
@@ -51,5 +52,6 @@ void	pa(void)
 		node->nxt = stack()->a;
 		stack()->a = node;
 	}
-	write(1, "pa\n", 3);
+	stack()->total_actions++;
+	//write(1, "pa\n", 3);
 }

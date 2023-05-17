@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:40:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/16 22:19:27 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:51:51 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@ void	sa(void)
 	int	buffer;
 
 	buffer = stack()->a->val;
-	stack()->a->val = stack()->a->nxt->val;
-	stack()->a->nxt->val = buffer;
-	write(1, "sa\n", 3);
+	if (stack()->a->nxt)
+	{
+		stack()->a->val = stack()->a->nxt->val;
+		stack()->a->nxt->val = buffer;
+		stack()->total_actions++;
+		//write(1, "sa\n", 3);
+	}
 }
 
 void	sb(void)
@@ -27,14 +31,19 @@ void	sb(void)
 	int	buffer;
 
 	buffer = stack()->b->val;
-	stack()->b->val = stack()->b->nxt->val;
-	stack()->b->nxt->val = buffer;
-	write(1, "sb\n", 3);
+	if (stack()->b->nxt)
+	{
+		stack()->b->val = stack()->b->nxt->val;
+		stack()->b->nxt->val = buffer;
+		stack()->total_actions++;
+		write(1, "sb\n", 3);
+	}
 }
 
 void	ss(void)
 {
 	sa();
 	sb();
-	write(1, "ss\n", 3);
+	stack()->total_actions++;
+	//write(1, "ss\n", 3);
 }
