@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 23:28:48 by simao             #+#    #+#             */
-/*   Updated: 2023/05/17 15:17:59 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/17 22:14:43 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	medium_sort(void)
 			sa();
 			pb();
 		}
-		i = indx(list_min_val(stack()->a));
+		i = indx(list_min_val(stack()->a), stack()->a);
 		proximity = list_len(stack()->a) / 2;
 		if (proximity > i)
 			ra();

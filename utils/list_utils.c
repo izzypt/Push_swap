@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:19:20 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/17 15:17:53 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/17 22:14:10 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ int	list_min_val(t_stack_node *head)
 	return (min);
 }
 
-int	indx(int value)
+int	indx(int value, t_stack_node *lst)
 {
 	t_stack_node	*curr;
 	int				i;
 
-	curr = stack()->a;
+	curr = lst;
 	i = 0;
 	while (curr)
 	{

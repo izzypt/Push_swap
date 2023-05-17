@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/17 15:16:55 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/17 22:14:05 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int				ft_atoi(const char *s);
 // Utils
 void			put_nbr(int number);
 void			error_and_exit(void);
-int				indx(int value);
+int				indx(int value, t_stack_node *lst);
 int				value_at(int i, t_stack_node *lst);
 // Sort functions
 void			smallest_sort(void);
@@ -75,5 +75,7 @@ void			big_sort(void);
 // Calculate functions
 int				mean(t_stack_node *lst);
 int				best_move(t_stack_node	*lst, int pivot);
+int				best_friend(int number);
+int				move_cost(t_stack_node	*lst, int val);
 
 #endif
