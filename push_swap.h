@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/17 22:14:05 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/17 23:15:25 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ int				mean(t_stack_node *lst);
 int				best_move(t_stack_node	*lst, int pivot);
 int				best_friend(int number);
 int				move_cost(t_stack_node	*lst, int val);
+int				*best_pair(void);
 
 #endif

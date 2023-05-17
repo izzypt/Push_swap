@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:45:42 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/17 23:04:17 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/18 00:00:50 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	*best_pair(void)
 	t_stack_node	*curr;
 
 	curr = stack()->b;
+	best_cost = INT_MAX;
 	pair = malloc(sizeof(int) * 2);
 	while (curr)
 	{
@@ -47,6 +48,7 @@ int	*best_pair(void)
 		}
 		curr = curr->nxt;
 	}
+	printf("best_cost %d\n", best_cost);
 	return (pair);
 }
 
@@ -64,9 +66,29 @@ void	big_sort(void)
 			ra();
 	}
 	small_sort();
+	print_list(stack()->a);
+	write(1, "\n", 1);
 	top_pair = best_pair();
-	printf("best pair 0: %d\n", top_pair[0]);
-	printf("best pair 1: %d\n", top_pair[1]);
+	printf("top pair is: [%d][%d]\n", top_pair[0], top_pair[1]);
+	while (stack()->b)
+	{
+		if (stack()->a->val != top_pair[0])
+		{
+			if ((list_len(stack()->b) / 2) - 1 > indx(top_pair[0], stack()->b))
+				rb();
+			else
+				rrb();
+		}
+		if (stack()->b->val != top_pair[1])
+		{
+			if ((list_len(stack()->a) / 2) - 1 > indx(top_pair[1], stack()->a))
+				ra();
+			else
+				rra();
+		}
+		pa();
+		free(top_pair();)
+	}
 	print_list(stack()->a);
 	write(1, "\n", 1);
 	print_list(stack()->b);
