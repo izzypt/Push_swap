@@ -10,3 +10,4 @@ $(NAME): $(SRC)
 
 clean:
 	rm -f $(NAME)
+

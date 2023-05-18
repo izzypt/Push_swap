@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/18 16:08:30 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/19 00:03:25 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void			print_list(t_stack_node *head);
 int				list_max_val(t_stack_node *head);
 int				list_min_val(t_stack_node *head);
 t_stack_node	*sort_list(t_stack_node *lst);
+void			free_list(t_stack_node *lst);
 // Actions
 void			sa(void);
 void			sb(void);

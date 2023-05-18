@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:45:42 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/18 23:19:05 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/19 00:08:30 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,6 @@ void	rotate_min_val(void)
 	}
 }
 
-/*
-1 - Push all the elements from A to B until 3 elements are left, w/ 2 conditions:
-1.1 - If the element in A is below the list mean, we push.
-1.2 - If the element in A is above the list mean, we rotate.
-2 - Sort the 3 elements in ascending order.
-3 - While there are elements in stack B, find the best move on stack A and stack B. Calculate the cost of moving each element.
-
-*/
 void	big_sort(void)
 {
 	int				media;

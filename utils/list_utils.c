@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:19:20 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/17 22:14:10 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/19 00:03:45 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,19 @@ int	value_at(int index, t_stack_node *lst)
 		curr = curr->nxt;
 	}
 	return (-9999);
+}
+
+void	free_list(t_stack_node *lst)
+{
+	t_stack_node	*curr;
+	t_stack_node	*next_node;
+
+	curr = lst;
+	while (curr)
+	{
+		next_node = curr->nxt;
+		free(curr);
+		curr = next_node;
+	}
+
 }
