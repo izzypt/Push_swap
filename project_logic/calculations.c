@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calculations.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:57:50 by simao             #+#    #+#             */
-/*   Updated: 2023/05/17 22:12:16 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:00:55 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,35 @@ int	mean(t_stack_node *lst)
 	return ((int)(total / lst_len));
 }
 
-int	best_friend(int number)
+int	lst_mid(t_stack_node *lst)
 {
-	int				best_friend;
-	t_stack_node	*curr;
-	int				tmp;
+	return ((list_len(lst) / 2) - 1);
+}
 
-	curr = stack()->a;
-	tmp = INT_MAX;
-	while (curr)
+void	make_best_friends(void)
+{
+	long			tmp;
+	t_stack_node	*curr_a;
+	t_stack_node	*curr_b;
+
+	curr_b = stack()->b;
+	while (curr_b)
 	{
-		if (curr->val > number && (curr->val - number) < tmp)
+		tmp = LONG_MAX;
+		curr_a = stack()->a;
+		while (curr_a)
 		{
-			tmp = curr->val - number;
-			best_friend = curr->val;
+			if (curr_a->val > curr_b->val && (curr_a->val - curr_b->val) < tmp)
+			{
+				tmp = curr_a->val - curr_b->val;
+				curr_b->bff = curr_a->val;
+			}
+			curr_a = curr_a->nxt;
 		}
-		curr = curr->nxt;
+		if (tmp == LONG_MAX && curr_b)
+			curr_b->bff = list_min_val(stack()->a);
+		curr_b = curr_b->nxt;
 	}
-	//printf("best friend of number %d is: %d\n", number, best_friend);
-	return (best_friend);
 }
 
 int	move_cost(t_stack_node	*lst, int val)

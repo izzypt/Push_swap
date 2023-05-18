@@ -1,60 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rotate_both_inverted.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/18 15:43:17 by simao            ###   ########.fr       */
+/*   Created: 2023/05/18 15:40:59 by simao             #+#    #+#             */
+/*   Updated: 2023/05/18 15:44:11 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra(void)
-{
-	t_stack_node	*curr;
-	int				temp;
-
-	curr = stack()->a;
-	temp = curr->val;
-	while (curr)
-	{
-		if (!(curr->nxt))
-		{
-			curr->val = temp;
-			break ;
-		}
-		curr->val = curr->nxt->val;
-		curr = curr->nxt;
-	}
-	stack()->total_actions++;
-	//write(1, "ra\n", 3);
-}
-
-void	rb(void)
-{
-	t_stack_node	*curr;
-	int				temp;
-
-	curr = stack()->b;
-	temp = curr->val;
-	while (curr)
-	{
-		if (!(curr->nxt))
-		{
-			curr->val = temp;
-			break ;
-		}
-		curr->val = curr->nxt->val;
-		curr = curr->nxt;
-	}
-	stack()->total_actions++;
-	//write(1, "rb\n", 3);
-}
-
-void	rra(void)
+/*
+Minimal rra performs the same action as rra, 
+except it doesnt print or count the action.
+*/
+void	minimal_rra(void)
 {
 	t_stack_node	*curr;
 
@@ -64,11 +26,13 @@ void	rra(void)
 	curr->nxt->nxt = stack()->a;
 	stack()->a = curr->nxt;
 	curr->nxt = NULL;
-	stack()->total_actions++;
-	//write(1, "rra\n", 4);
 }
 
-void	rrb(void)
+/*
+Minimal rrb performs the same action as rrb, 
+except it doesnt print or count the action.
+*/
+void	minimal_rrb(void)
 {
 	t_stack_node	*curr;
 
@@ -78,6 +42,12 @@ void	rrb(void)
 	curr->nxt->nxt = stack()->b;
 	stack()->b = curr->nxt;
 	curr->nxt = NULL;
+}
+
+void	rrr(void)
+{
+	minimal_rra();
+	minimal_rrb();
 	stack()->total_actions++;
-	//write(1, "rrb\n", 4);
+	//write(1, "rrr\n", 3);
 }

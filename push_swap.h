@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:09:37 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/17 23:15:25 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:08:30 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 typedef struct s_stack_node
 {
 	int						val;
+	int						bff;
+	int						position;
+	int						move_cost;
 	struct s_stack_node		*nxt;
 	struct s_stack_node		*prev;
 }						t_stack_node;
@@ -56,6 +59,7 @@ void			rb(void);
 void			rr(void);
 void			rra(void);
 void			rrb(void);
+void			rrr(void);
 void			pb(void);
 void			pa(void);
 // Validation function
@@ -75,8 +79,9 @@ void			big_sort(void);
 // Calculate functions
 int				mean(t_stack_node *lst);
 int				best_move(t_stack_node	*lst, int pivot);
-int				best_friend(int number);
+void			make_best_friends(void);
 int				move_cost(t_stack_node	*lst, int val);
 int				*best_pair(void);
+int				lst_mid(t_stack_node *lst);
 
 #endif

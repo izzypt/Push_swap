@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rotate_both.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/18 15:43:17 by simao            ###   ########.fr       */
+/*   Created: 2023/05/18 15:34:29 by simao             #+#    #+#             */
+/*   Updated: 2023/05/18 15:46:22 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra(void)
+/*
+Minimal ra performs the same action as ra, 
+except it doesnt print or count the action.
+*/
+void	minimal_ra(void)
 {
 	t_stack_node	*curr;
 	int				temp;
@@ -29,11 +33,13 @@ void	ra(void)
 		curr->val = curr->nxt->val;
 		curr = curr->nxt;
 	}
-	stack()->total_actions++;
-	//write(1, "ra\n", 3);
 }
 
-void	rb(void)
+/*
+Minimal rb performs the same action as rb, 
+except it doesnt print or count the action.
+*/
+void	minimal_rb(void)
 {
 	t_stack_node	*curr;
 	int				temp;
@@ -50,34 +56,13 @@ void	rb(void)
 		curr->val = curr->nxt->val;
 		curr = curr->nxt;
 	}
-	stack()->total_actions++;
-	//write(1, "rb\n", 3);
 }
 
-void	rra(void)
+void	rr(void)
 {
-	t_stack_node	*curr;
-
-	curr = stack()->a;
-	while (curr->nxt->nxt)
-		curr = curr->nxt;
-	curr->nxt->nxt = stack()->a;
-	stack()->a = curr->nxt;
-	curr->nxt = NULL;
+	minimal_ra();
+	minimal_rb();
 	stack()->total_actions++;
-	//write(1, "rra\n", 4);
+	//write(1, "rr\n", 3);
 }
 
-void	rrb(void)
-{
-	t_stack_node	*curr;
-
-	curr = stack()->b;
-	while (curr->nxt->nxt)
-		curr = curr->nxt;
-	curr->nxt->nxt = stack()->b;
-	stack()->b = curr->nxt;
-	curr->nxt = NULL;
-	stack()->total_actions++;
-	//write(1, "rrb\n", 4);
-}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:44:19 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/17 21:26:05 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:46:56 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	create_stack_a(argc, argv);
-	create_stack_tmp(argc, argv);
 	if (argc < 4)
 		smallest_sort();
 	else if (argc == 4)
@@ -34,6 +33,6 @@ int	main(int argc, char **argv)
 		big_sort();
 	if (list_is_sorted(stack()->a))
 		write(1, "OK\n", 3);
+	//print_list(stack()->a);
 	printf("Moves: %d\n", stack()->total_actions);
-	printf("stack a mean: %d\n", mean(stack()->a));
 }

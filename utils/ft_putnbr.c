@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:57:27 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/11 16:59:41 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/18 13:43:24 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 void	put_nbr(int number)
 {
-	if (number > 10)
+	if (number < 0)
+	{
+		write(1, "-", 1);
+		number = -number;
+	}
+	if (number >= 10)
 		put_nbr(number / 10);
 	write(1, &"0123456789"[number % 10], 1);
 }

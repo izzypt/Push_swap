@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lists_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 22:53:56 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/17 23:56:55 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/18 13:44:57 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	print_list(t_stack_node *head)
 		write(1, " ", 1);
 		curr = curr->nxt;
 	}
+	write(1, "\n", 1);
 }
 
 int	list_is_sorted(t_stack_node *head)
