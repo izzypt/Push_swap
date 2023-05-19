@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:40:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/18 22:36:51 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/19 13:24:09 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sa(void)
 		stack()->a->val = stack()->a->nxt->val;
 		stack()->a->nxt->val = buffer;
 		stack()->total_actions++;
-		//write(1, "sa\n", 3);
+		write(1, "sa\n", 3);
 	}
 }
 
@@ -36,7 +36,7 @@ void	sb(void)
 		stack()->b->val = stack()->b->nxt->val;
 		stack()->b->nxt->val = buffer;
 		stack()->total_actions++;
-		//write(1, "sb\n", 3);
+		write(1, "sb\n", 3);
 	}
 }
 
@@ -45,5 +45,5 @@ void	ss(void)
 	sa();
 	sb();
 	stack()->total_actions++;
-	//write(1, "ss\n", 3);
+	write(1, "ss\n", 3);
 }

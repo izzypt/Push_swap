@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:44:19 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/19 00:07:19 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/19 13:22:39 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	main(int argc, char **argv)
 		medium_sort();
 	else
 		big_sort();
-	if (list_is_sorted(stack()->a))
+	/*if (list_is_sorted(stack()->a))
 		write(1, "OK\n", 3);
 	printf("Moves: %d\n", stack()->total_actions);
 	free_list(stack()->a);
-	free_list(stack()->b);
+	free_list(stack()->b);*/
 }

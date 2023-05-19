@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:40:59 by simao             #+#    #+#             */
-/*   Updated: 2023/05/18 15:44:11 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/19 13:23:21 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void	rrr(void)
 	minimal_rra();
 	minimal_rrb();
 	stack()->total_actions++;
-	//write(1, "rrr\n", 3);
+	write(1, "rrr\n", 4);
 }

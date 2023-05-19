@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:03:01 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/18 15:43:17 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/19 13:23:57 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ra(void)
 		curr = curr->nxt;
 	}
 	stack()->total_actions++;
-	//write(1, "ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
 void	rb(void)
@@ -51,7 +51,7 @@ void	rb(void)
 		curr = curr->nxt;
 	}
 	stack()->total_actions++;
-	//write(1, "rb\n", 3);
+	write(1, "rb\n", 3);
 }
 
 void	rra(void)
@@ -65,7 +65,7 @@ void	rra(void)
 	stack()->a = curr->nxt;
 	curr->nxt = NULL;
 	stack()->total_actions++;
-	//write(1, "rra\n", 4);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(void)
@@ -79,5 +79,5 @@ void	rrb(void)
 	stack()->b = curr->nxt;
 	curr->nxt = NULL;
 	stack()->total_actions++;
-	//write(1, "rrb\n", 4);
+	write(1, "rrb\n", 4);
 }
