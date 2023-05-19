@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:19:20 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/19 00:03:45 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/19 19:45:44 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,4 @@ void	free_list(t_stack_node *lst)
 		free(curr);
 		curr = next_node;
 	}
-
 }
