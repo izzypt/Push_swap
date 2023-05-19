@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:37:14 by simao             #+#    #+#             */
-/*   Updated: 2023/05/19 16:57:54 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/19 17:25:33 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	pb(void)
 		stack()->b = node;
 	}
 	stack()->total_actions++;
-	//write(1, "pb\n", 3);
+	write(1, "pb\n", 3);
 }
 
 void	pa(void)
@@ -54,5 +54,5 @@ void	pa(void)
 		stack()->a = node;
 	}
 	stack()->total_actions++;
-	//write(1, "pa\n", 3);
+	write(1, "pa\n", 3);
 }

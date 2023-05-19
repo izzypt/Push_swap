@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 23:54:43 by simao             #+#    #+#             */
-/*   Updated: 2023/05/16 12:33:59 by simao            ###   ########.fr       */
+/*   Updated: 2023/05/19 17:37:33 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	smallest_sort(void)
 {
 	if (list_len(stack()->a) == 1)
 		return ;
-	if (list_len(stack()->a) == 2)
+	if (list_len(stack()->a) == 2 && !list_is_sorted(stack()->a))
 		sa();
 }
 
@@ -40,8 +40,5 @@ void	small_sort(void)
 		ra();
 	}
 	else if (curr->val > curr->nxt->val && curr->val > curr->nxt->nxt->val)
-	{
-		rra();
-		rra();
-	}
+		ra();
 }

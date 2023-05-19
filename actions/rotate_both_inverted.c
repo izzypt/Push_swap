@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:40:59 by simao             #+#    #+#             */
-/*   Updated: 2023/05/19 16:57:44 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/19 17:27:07 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void	rrr(void)
 	minimal_rra();
 	minimal_rrb();
 	stack()->total_actions++;
-	//write(1, "rrr\n", 4);
+	write(1, "rrr\n", 4);
 }

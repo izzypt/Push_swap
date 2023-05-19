@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:44:19 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/19 16:57:10 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/19 17:52:00 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ int	main(int argc, char **argv)
 		medium_sort();
 	else
 		big_sort();
-	/*if (list_is_sorted(stack()->a))
+	/*=if (list_is_sorted(stack()->a))
 		write(1, "OK\n", 3);
-	printf("Moves: %d\n", stack()->total_actions);*/
+	printf("Moves: %d\n", stack()->total_actions);
+	//print_list(stack()->a);*/
 	free_list(stack()->a);
 	free_list(stack()->b);
 }
