@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:45:42 by smagalha          #+#    #+#             */
-/*   Updated: 2023/05/19 00:08:30 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/05/19 12:38:57 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,32 +37,31 @@ int	*best_pair(void)
 	return (pair);
 }
 
-void	make_move(int *top_pair)
+void	make_move(int *best_move)
 {
-	while (stack()->a->val != top_pair[0] && stack()->b->val != top_pair[1])
+	while (stack()->a->val != best_move[0] && stack()->b->val != best_move[1])
 	{
-		if (lst_mid(stack()->b) > indx(top_pair[0], stack()->a)
-			&& lst_mid(stack()->a) > indx(top_pair[1], stack()->b))
+		if (lst_mid(stack()->b) > indx(best_move[0], stack()->a)
+			&& lst_mid(stack()->a) > indx(best_move[1], stack()->b))
 			rr();
 		else
 			rrr();
 	}
-	while (stack()->a->val != top_pair[0])
+	while (stack()->a->val != best_move[0])
 	{
-		if (lst_mid(stack()->a) > indx(top_pair[0], stack()->a))
+		if (lst_mid(stack()->a) > indx(best_move[0], stack()->a))
 			ra();
 		else
 			rra();
 	}
-	while (stack()->b->val != top_pair[1])
+	while (stack()->b->val != best_move[1])
 	{
-		if (lst_mid(stack()->b) > indx(top_pair[1], stack()->b))
+		if (lst_mid(stack()->b) > indx(best_move[1], stack()->b))
 			rb();
 		else
 			rrb();
 	}
 	pa();
-	free(top_pair);
 }
 
 void	rotate_min_val(void)
@@ -83,7 +82,6 @@ void	big_sort(void)
 {
 	int				media;
 	int				*best_moves;
-	t_stack_node	*curr;
 
 	while (list_len(stack()->a) > 3)
 	{
@@ -94,11 +92,11 @@ void	big_sort(void)
 			ra();
 	}
 	small_sort();
-	curr = stack()->b;
 	while (stack()->b)
 	{
 		best_moves = best_pair();
 		make_move(best_moves);
+		free(best_moves);
 	}
 	if (!list_is_sorted(stack()->a))
 		rotate_min_val();
