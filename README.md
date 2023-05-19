@@ -78,6 +78,10 @@ Decided to implement the stack by using a linked list.
 
 ![image](https://github.com/izzypt/Push_swap/assets/73948790/7486eb4f-bb2f-4a45-ba97-ca808055e89d)
 
+Used the following tester:
+
+- https://github.com/laisarena/push_swap_tester
+
 
 ### Another helpfull topics :
 
